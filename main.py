@@ -1,11 +1,11 @@
+import os
+os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
+
 import streamlit as st
 import numpy as np
 from PIL import Image
 import joblib
 from tensorflow.keras.models import load_model
-
-import os
-os.environ["PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION"] = "python"
 
 model = load_model("model.h5", compile=False)
 CLASS_NAMES = ['Early Blight','Late Blight','Healthy']
@@ -36,5 +36,6 @@ if uploaded_file is not None:
             st.success(f"🎯 Model Prediction: {CLASS_NAMES[predicted_index]}")
         except Exception as e:
             st.error(f"❌ Error during prediction: {e}")
+
 
 
