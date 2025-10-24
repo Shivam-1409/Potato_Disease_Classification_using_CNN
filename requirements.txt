@@ -1,6 +1,4 @@
-tensorflow==2.13.0
-protobuf==3.20.3
-streamlit==1.25.0
+tensorflow
 fastapi
 uvicorn
 python-multipart
